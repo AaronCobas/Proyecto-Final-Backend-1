@@ -35,6 +35,7 @@ export default class CartManager {
         const carts = await this.readFile();
         const newCart = {
             id : carts.length===0 ? 1 : carts[carts.length - 1].id + 1,
+            timestamp: Date.now(),
             cartProducts: [] // Las colecciones siempre se inician vacías
         }
         carts.push(newCart);
